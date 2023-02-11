@@ -1,22 +1,23 @@
 ---
 import Separator from '../separator'
+import NavbarItem from './NavbarItem.astro'
 ---
 
-<nav class="flex w-full justify-center border-4 border-black">
+<nav class="flex w-full justify-center">
   <!-- static navbar -->
-  <ol class="lg:flex space-x-4 items-center hidden">
-    <li><a href="">HOME</a></li>
+  <ol class="my-8 hidden items-center space-x-4 lg:flex">
+    <NavbarItem href="" name="HOME" />
     <Separator />
-    <li><a href="#rsvp">RSVP</a></li>
+    <NavbarItem href="#rsvp" name="RSVP" />
     <Separator />
-    <li><a href="#gallery">GALLERY</a></li>
+    <NavbarItem href="#gallery" name="GALLERY" />
     <Separator />
-    <li><a href="#weddingParty">WEDDING PARTY</a></li>
+    <NavbarItem href="#weddingParty" name="WEDDING PARTY" />
     <Separator />
-    <li><a href="#travel">TRAVEL</a></li>
+    <NavbarItem href="#travel" name="TRAVEL" />
     <Separator />
-    <li><a href="#giftRegistry">GIFT REGISTRY</a></li>
+    <NavbarItem href="giftRegistry" name="GIFT REGISTRY" />
     <Separator />
-    <li><a href="#contact">CONTACT</a></li>
+    <NavbarItem href="#contact" name="CONTACT" />
   </ol>
 </nav>

@@ -1,0 +1,17 @@
+---
+export interface Props {
+  href: string
+  name: string
+}
+
+const { href, name } = Astro.props
+---
+
+<li>
+  <a href={href} class="group transition duration-500">
+    {name}
+    <span
+      class="block h-1 max-w-0 rounded-full bg-gray-700 transition-all duration-500 group-hover:max-w-full group-hover:bg-black"
+    ></span>
+  </a>
+</li>
