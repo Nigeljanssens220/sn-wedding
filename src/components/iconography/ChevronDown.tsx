@@ -1,22 +1,13 @@
-import { useCallback } from 'react'
 import classNames from '../../utils/styling'
 
 interface IconProps {
   className: string
-  href: string
+  onClick?: () => void
 }
 
-const ChevronDown: React.FC<IconProps> = ({ className, href }) => {
-  const handleClick = useCallback(() => {
-    const element = document.getElementById(href)
-    console.log(element)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
-  }, [href])
-
+const ChevronDown: React.FC<IconProps> = ({ className, onClick }) => {
   return (
-    <button className="cursor-pointer" onClick={handleClick}>
+    <button className="cursor-pointer" onClick={onClick}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
