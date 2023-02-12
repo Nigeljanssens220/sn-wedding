@@ -1,5 +1,5 @@
 ---
-import ArrowDown from '../../iconography/ArrowDown.astro'
+import ChevronDown from '../../iconography/ChevronDown'
 
 export interface Props {
   image: string
@@ -13,6 +13,6 @@ const { image } = Astro.props
     <img src={image} alt="hero" class="h-full max-h-screen w-full object-cover" />
   </div>
   <div class="flex h-full flex-col items-center justify-center bg-black bg-opacity-50">
-    <ArrowDown className="animate-bounce text-white !h-8 !w-8 absolute bottom-8" href="" />
+    <ChevronDown className="animate-bounce text-white !h-8 !w-8 absolute bottom-8" href="rsvp" client:load />
   </div>
 </section>

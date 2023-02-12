@@ -1,0 +1,14 @@
+---
+export interface Props {
+  image: string
+}
+
+const { image } = Astro.props
+---
+
+<section id="rsvp" class="relative h-screen">
+  <div class="absolute inset-0 -z-10">
+    <img src={image} alt="hero" class="h-full max-h-screen w-full object-cover" />
+  </div>
+  <div class="flex h-full flex-col items-center justify-center bg-black bg-opacity-50"></div>
+</section>

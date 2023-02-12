@@ -1,20 +1,24 @@
 ---
+import { navLinks } from '../../constants/nav'
 import Separator from '../separator'
 import NavbarItem from './NavbarItem.astro'
 ---
 
 <nav class="fixed z-50 flex w-full justify-center">
   <ol class="my-8 hidden items-center space-x-8 lg:flex">
-    <NavbarItem href="" name="HOME" />
-    <Separator />
-    <NavbarItem href="#rsvp" name="RSVP" />
-    <Separator />
-    <NavbarItem href="#gallery" name="GALLERY" />
-    <Separator />
-    <NavbarItem href="#weddingParty" name="WEDDING PARTY" />
-    <Separator />
-    <NavbarItem href="#travel" name="TRAVEL" />
-    <Separator />
-    <NavbarItem href="#contact" name="CONTACT" />
+    {
+      navLinks.map((link, idx) => {
+        if (idx + 1 === navLinks.length) {
+          return <NavbarItem href={`#${link}`} name={link.toUpperCase()} />
+        }
+
+        return (
+          <>
+            <NavbarItem href={link === 'home' ? '#' : `#${link}`} name={link.toUpperCase()} />
+            <Separator />
+          </>
+        )
+      })
+    }
   </ol>
 </nav>
