@@ -7,7 +7,7 @@ export interface Props {
 }
 
 const Hero: React.FC<Props> = ({ image }) => {
-  const handleClick = useCallback((href: string) => {
+  const scrollToElement = useCallback((href: string) => {
     const element = document.getElementById(href)
     console.log(element)
     if (element) {
@@ -25,10 +25,10 @@ const Hero: React.FC<Props> = ({ image }) => {
       <div className="absolute inset-0 -z-10">
         <img src={image} alt="hero" className="h-full max-h-screen w-full object-cover" />
       </div>
-      <div className="flex h-full flex-col items-center justify-center bg-black bg-opacity-50">
+      <div className="relative flex h-full flex-col items-center justify-center bg-black bg-opacity-60">
         <ChevronDown
-          className="absolute bottom-8 !h-8 !w-8 animate-bounce text-white"
-          onClick={() => handleClick('rsvp')}
+          className="absolute bottom-8 mx-auto mb-5 !h-8 !w-8 animate-bounce text-white lg:mb-0"
+          onClick={() => scrollToElement('rsvp')}
         />
       </div>
     </motion.section>
